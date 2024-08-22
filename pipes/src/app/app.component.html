@@ -1,0 +1,74 @@
+<div class="container">
+  <h3>Payment Form</h3>
+
+  <div class="row">
+    <div class="form-group col">
+      <label>Payee Name</label>
+      <input
+        class="form-control"
+        #passNameEvent
+        (input)="onNameChange(passNameEvent.value)"
+      />
+    </div>
+
+    <div class="col">
+      <label><b>Name</b></label>
+      <div>
+        {{ name | titlecase }}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col">
+      <label>Payment Date</label>
+      <input
+        type="date"
+        class="form-control"
+        #passDateEvent
+        (input)="onDateChange(passDateEvent.value)"
+      />
+    </div>
+
+    <div class="col">
+      <label><b>Payment Date</b></label>
+      <div>
+        {{ date | date : "MMMM dd, y" }}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col">
+      <label>Amount</label>
+      <input
+        class="form-control"
+        #passAmountEvent
+        (input)="onAmountChange(passAmountEvent.value)"
+      />
+    </div>
+
+    <div class="col">
+      <label><b>Amount</b></label>
+      <div>
+        {{ amount | currency : "EUR" }}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col">
+      <label>Miles</label>
+      <input
+        class="form-control"
+        #passMilesEvent
+        (input)="onMilesChange(passMilesEvent.value)"
+      />
+    </div>
+
+    <div class="col">
+      <label><b>Kilometers</b></label>
+      <div>
+        {{ miles | convert : "m" | number : "1.0-2" }}
+      </div>
+    </div>
+  </div>
+  <div class="row"></div>
+</div>
